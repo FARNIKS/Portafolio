@@ -1,0 +1,255 @@
+/* Base styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ddd;
+}
+
+#theme-toggle {
+    background: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+#hero {
+    background: url('images/hero-bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    animation: fadeInDown 1s;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    animation: fadeInUp 1s;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.skills-container, .projects-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.skill, .project {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 300px;
+    background: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill:hover, .project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.project a:hover {
+    background-color: #555;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 5px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+.alert {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+.dark-theme #hero{
+    color: #fff;
+}
+.dark-theme header, .dark-theme footer {
+    background-color: #000;
+}
+
+.dark-theme nav ul li a {
+    color: #fff;
+}
+
+.dark-theme nav ul li a:hover {
+    color: #ddd;
+}
+
+.dark-theme #theme-toggle {
+    background: #555;
+    color: #fff;
+}
+
+.dark-theme .skill, .dark-theme .project {
+    background: #444;
+    border-color: #555;
+}
+
+.dark-theme .project a {
+    background-color: #000;
+}
+
+.dark-theme .project a:hover {
+    background-color: #222;
+}
+
+.dark-theme form input, .dark-theme form textarea {
+    background: #555;
+    color: #fff;
+    border-color: #666;
+}
+
+.dark-theme form button {
+    background: #000;
+}
+
+.dark-theme form button:hover {
+    background-color: #222;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .skills-container, .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill, .project {
+        max-width: 90%;
+    }
+}
